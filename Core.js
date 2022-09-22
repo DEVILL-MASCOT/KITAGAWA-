@@ -2389,9 +2389,10 @@ if (isBanChat) return reply(mess.bangc)
  if (isBanChat) return reply(mess.bangc)
  if (!m.isGroup) return replay(mess.grouponly)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
-for (let nexus of groupAdmins)
-for (let mem of participants)
- let teks = ` 
+ for (let nexus of groupAdmins)
+ for (let mem of participants)
+ 
+  let teks = ` 
  ┏━━━━━━━━━━━┑
  ┃𝗧𝗔𝗚𝗔𝗟𝗟
  ┃ group💕: *${groupMetadata.subject}*
@@ -2402,7 +2403,7 @@ for (let mem of participants)
  ┃┄┄┄┄┄┄┄┄┄┄┄
  ┃ Admins👑 : @${nexus.split('@')[0]}
  ┃
- ┃ members🔥 : \n@${mem.split('@')[0]}
+ ┃ members🔥 : \n@${mem.id.split('@')[0]}
  ┗━━━━━━━━ \n\n` 
 		Miku.sendMessage(m.chat,{ text:teks, mentions: participants.map(a => a.id) },{quoted: m })
 		}
